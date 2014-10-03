@@ -21,7 +21,7 @@ object Metrics {
     s
   }
 
-  private val file: File = new File("~")
+  private val file: File = new File("/home/client_1/")
   println(s"used folder ${file.getAbsolutePath}")
   val csvReporter = CsvReporter.forRegistry(metricRegistry)
     .formatFor(Locale.forLanguageTag("PL"))
