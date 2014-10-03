@@ -29,8 +29,8 @@ libraryDependencies ++= {
     "com.typesafe.akka"         %%  "akka-testkit"              % akkaV   % "test",
     "org.specs2"                %%  "specs2"                    % "2.2.3" % "test",
     "nl.grons"                  %%  "metrics-scala"             % "3.2.1_a2.3",
-    "com.codahale.metrics"      %   "metrics-ganglia"           % "3.0.2",
-    "ch.qos.logback"            %   "logback-classic"           % "1.1.2"
+    //    "ch.qos.logback"            %   "logback-classic"           % "1.1.2",
+    "com.codahale.metrics"      %   "metrics-ganglia"           % "3.0.2"
   )
 }
 
