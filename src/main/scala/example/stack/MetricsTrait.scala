@@ -13,9 +13,10 @@ import info.ganglia.gmetric4j.gmetric.GMetric.UDPAddressingMode
 object Metrics {
   val metricRegistry = new com.codahale.metrics.MetricRegistry()
 
-  //  val gangliaServer = new GMetric("192.168.56.110", 8649, UDPAddressingMode.UNICAST, 1)
-  //  val reporter = GangliaReporter.forRegistry(metricRegistry).convertRatesTo(TimeUnit.SECONDS).convertDurationsTo(TimeUnit.MILLISECONDS).build(gangliaServer)
-  //  reporter.start(15, TimeUnit.SECONDS)
+  val gangliaServer = new GMetric("192.168.56.110", 8649, UDPAddressingMode.UNICAST, 1, true)
+  val reporter = GangliaReporter.forRegistry(metricRegistry).convertRatesTo(TimeUnit.SECONDS).convertDurationsTo(TimeUnit.MILLISECONDS).build(gangliaServer)
+  reporter.start(15, TimeUnit.SECONDS)
+
   def printAndReturn[T](s: T): T = {
     println(s.toString)
     s
