@@ -21,11 +21,13 @@ object Metrics {
     s
   }
 
+  private val file: File = new File("~")
+  println(s"used folder ${file.getAbsolutePath}")
   val csvReporter = CsvReporter.forRegistry(metricRegistry)
     .formatFor(Locale.forLanguageTag("PL"))
     .convertRatesTo(TimeUnit.SECONDS)
     .convertDurationsTo(TimeUnit.MILLISECONDS)
-    .build(printAndReturn(new File("~")))
+    .build(file)
   csvReporter.start(10, TimeUnit.SECONDS)
 }
 
